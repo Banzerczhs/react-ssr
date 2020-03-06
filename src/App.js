@@ -1,31 +1,20 @@
 import React from 'react';
-import {connect} from "react-redux";
+import {hot} from "react-hot-loader";
+import {NavLink} from "react-router-dom";
+import {BrowserRouter as Router} from "react-router-dom";
+import RouterCom from "./router";
 
-import Counter from "./Counter";
-import Card from "./components/card";
+import style from './App.module.less';
 
-function App(props){
-  return (
-    <div className="App">
-      <Counter value={props.state} {...props}></Counter>
-      <Card></Card>
-    </div>
-  );
+function App(){
+    return (
+        <Router>
+            <img src={require('./cnodejs_light.svg')} alt="logo" className={style.logo}/>
+            <p><NavLink to="/user">go to user</NavLink></p>
+            <p><NavLink to="/hjk">go to hjk</NavLink></p>
+            <RouterCom/>
+        </Router>
+    );
 }
 
-
-function mapDispatchToProps(dispatch){
-  return {
-    onIncrement(){
-      dispatch({type : 'INCREMENT'});
-    },
-    onDecrement(){
-      dispatch({type : 'DECREMENT'});
-    },
-    onIncrementAsync(){
-      dispatch({type : 'INCREMENT_ASYNC'});
-    }
-  }
-}
-
-export default connect(state=>({state:state.Counter}),mapDispatchToProps)(App);
+export default hot(module)(App);

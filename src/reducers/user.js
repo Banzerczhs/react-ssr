@@ -1,12 +1,6 @@
 
-const initUserState={
-    age : '18',
-    name : 'czhs',
-    phone : '13545702904',
-    isLoading : false
-}
 
-export default function user(state=initUserState,action){
+export default function user(state={},action){
     let {payload}=action;
     switch(action.type){
         case 'USER_REQUEST':

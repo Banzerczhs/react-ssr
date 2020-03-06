@@ -66,3 +66,10 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+## 目前存在问题
+### 目前服务端渲染函数有两个renderToString和renderToNodeStream
+
+1. 使用renderToString的话，可以正常使用staticRouter的staticContext功能
+2. 如果使用renderToNodeStream，staticRouter的功能就无法正常使用

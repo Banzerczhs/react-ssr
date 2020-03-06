@@ -1,7 +1,9 @@
 import React,{Component} from "react";
+import {hot} from "react-hot-loader";
 import {connect} from "react-redux";
 
-import style from "./card.less"
+
+import style from "./card.module.less";
 
 class Card extends Component{
     constructor(props){
@@ -9,9 +11,9 @@ class Card extends Component{
 
         this.state={};
     }
-
+    
     render(){
-        let {name,age,phone}=this.props;
+        let {User:{name,age,phone}}=this.props.state;
         return (
             <div className={style.card}>
                 <p>姓名:{name}</p>
@@ -22,4 +24,4 @@ class Card extends Component{
     }
 }
 
-export default connect(state=>({state}))(Card);
+export default hot(module)(connect(state=>({state}))(Card));
