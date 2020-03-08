@@ -54,7 +54,6 @@ async function handleRender(ctx,next){
         </Provider>
     );
 
-    console.log(context);
     if(!context.status){
         // let data=fs.readFileSync(path.join(__dirname, '../build/index.html'), 'utf8');
         // let shtml=data.split(/\{\{\w+\}\}/g);
@@ -83,7 +82,6 @@ async function handleRender(ctx,next){
         ctx.res.end("error code：" + context.status);
     }
 }
-
 
 //当使用renderToString的时候使用此方法
 async function handlehtml(html,state){
