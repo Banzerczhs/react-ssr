@@ -1,5 +1,5 @@
 apps:
-  - script: ./index.js       # 入口文件
+  - script: ./server/index.js       # 入口文件
     name: 'app'              # 程序名称
     env:                     # 环境变量
       COMMON_VARIABLE: true
@@ -16,7 +16,7 @@ deploy:                     # 部署脚本
     repo: https://github.com/Banzerczhs/react-ssr.git # 远程仓库地址
     path: /var/www/html              # 拉取到服务器某个目录下
     pre-deploy: git fetch --all # 部署前执行
-    post-deploy: npm install &&  pm2 reload deploy.yaml --env production # 部署后执行
+    post-deploy: yarn install &&  pm2 reload deploy.yaml --env production # 部署后执行
     env:
       NODE_ENV: production
 
