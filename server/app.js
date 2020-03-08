@@ -10,9 +10,9 @@ import Router from "../src/router";
 import path from "path";
 import fs from "fs";
 
-import webpack from "webpack";
-import { devMiddleware ,hotMiddleware} from 'koa-webpack-middleware';
-import getConfig from "../config/webpack.config";
+//import webpack from "webpack";
+//import { devMiddleware ,hotMiddleware} from 'koa-webpack-middleware';
+//import getConfig from "../config/webpack.config";
 
 import { Provider } from 'react-redux';
 import configureStore from '../src/store';
@@ -102,10 +102,10 @@ async function handlehtml(html,state){
     })
 }
 
-let webpackConfig=getConfig('development');
-const compiler = webpack(webpackConfig);
-app.use(devMiddleware(compiler, {noInfo:true, publicPath: webpackConfig.output.publicPath }));
-app.use(hotMiddleware(compiler));
+//let webpackConfig=getConfig('development');
+//const compiler = webpack(webpackConfig);
+//app.use(devMiddleware(compiler, {noInfo:true, publicPath: webpackConfig.output.publicPath }));
+//app.use(hotMiddleware(compiler));
 
 app.listen(config.port,function(error){
     if (error) {
