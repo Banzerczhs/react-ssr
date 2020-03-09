@@ -73,3 +73,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 1. 使用renderToString的话，可以正常使用staticRouter的staticContext功能
 2. 如果使用renderToNodeStream，staticRouter的功能就无法正常使用
+
+项目预览地址：http://ban.mynatapp.cc
+
